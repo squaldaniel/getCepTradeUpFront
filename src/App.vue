@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Inicio from '@/components/Inicio.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo-tradeup-rodape.png" width="125" />
-
+    <img alt="Tradeup Logo" class="logo" src="@/assets/logo-tradeup-rodape.png" width="125" />
+    
     <div class="wrapper">
-      <HelloWorld msg="Teste TradeUp!" />
-
+      <Inicio msg="Teste TradeUp!" />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search">Search zip codes</RouterLink>
+        <RouterLink to="/">Início</RouterLink>
+        <RouterLink to="/search">Pesquisar Cep´s</RouterLink>
       </nav>
     </div>
   </header>

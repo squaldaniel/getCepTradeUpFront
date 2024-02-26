@@ -8,8 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      We need you to perform zip code searches to test our system.
-      Click on the link below.
+      Gostaria de pesquisar um cep? Clique no botão pesquisar cep abaixo.
     </h3>
   </div>
 </template>

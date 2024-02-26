@@ -11,7 +11,7 @@
     <h2>Consultas Realizadas:</h2>
     <ul>
       <li v-for="consulta in consultas" :key="consulta.id">
-        {{ consulta.numero }} - {{ consulta.resultado }}
+        {{ consulta.numero }} {{ consulta.resultado }}
       </li>
     </ul>
   </div>
@@ -47,10 +47,10 @@ export default {
         this.consultaEmAndamento = true;
         this.consultaErro = false;
         const numeroSemHifen = this.numero.replace('-', '');
+        // url do backend
         const response = await fetch(`http://127.0.0.1:8000/api/getcep/${this.numero}`);
         const data = await response.json()
         if (data) {
-          // Adapte conforme a estrutura real dos dados retornados
           const consulta = {
             id: Date.now(),
             numero: numeroSemHifen,
@@ -64,9 +64,9 @@ export default {
         const consulta = {
           id: Date.now(),
           numero: this.numero.replace('-', ''),
-          resultado: data// Supondo que a resposta contenha um campo 'resultado'
+          resultado: ('Rua: ' + data.logradouro + ', Bairro: '+ data.bairro 
+          + ' Localidade: '+data.localidade + ' - '+ data.uf)
         }
-
         this.$store.dispatch('adicionarConsulta', consulta)
         this.numero = '' // Limpa o campo após a consulta
       } catch (error) {
