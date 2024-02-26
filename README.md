@@ -1,4 +1,4 @@
-# tradeup_viacep
+# teste Tradeup Frontend
 
 Teste para a vaga de desenvolvedor Web da Empresa TradeUP.
 
@@ -16,3 +16,4 @@ npm run dev
 ```sh
 npm run build
 ```
+O backend necessário para realizar as consultas pode ser encontrado no repositório [TradeUp backend](https://github.com/squaldaniel/testeTradeUpBack), com suas instruções para utlização
