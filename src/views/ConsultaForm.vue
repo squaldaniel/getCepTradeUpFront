@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <form @submit.prevent="realizarConsulta">
-      <label for="numero">Número (Formato: 99999-999): </label>
-      <input v-model="numero" type="text" @input="formatarNumero" pattern="[0-9]{5}-[0-9]{3}" required />
-      <button type="submit">Realizar Consulta</button>
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Pesquise aqui!</h2>
+      <form @submit.prevent="realizarConsulta">
+        <label for="numero">Número (Formato: 99999-999): </label>
+        <input style="margin-bottom: 20px" placeholder="Digite aqui" class="input input-bordered input-accent w-full max-w-xs"
+        v-model="numero" type="text" @input="formatarNumero" pattern="[0-9]{5}-[0-9]{3}" required />
+        <button class="btn btn-primary w-full p-2" type="submit">Realizar Consulta</button>
+      </form>
+      <div class="divider divider-info">Cep´s</div>
       <p v-if="consultaEmAndamento">Realizando consulta...</p>
       <p v-if="consultaErro">Erro ao realizar a consulta.</p>
-    </form>
-
-    <h2>Consultas Realizadas:</h2>
-    <ul>
-      <li v-for="consulta in consultas" :key="consulta.id">
-        {{ consulta.numero }} {{ consulta.resultado }}
-      </li>
-    </ul>
+      <div class="card-actions justify-end">
+        <ul>
+          <li v-for="consulta in consultas" :key="consulta.id">
+            {{ consulta.numero }} {{ consulta.resultado }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
   

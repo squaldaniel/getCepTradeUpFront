@@ -5,30 +5,24 @@ import Inicio from '@/components/Inicio.vue'
 
 <template>
   <header>
-    <img alt="Tradeup Logo" class="logo" src="@/assets/logo-tradeup-rodape.png" width="125" />
-    
+    <img
+      alt="Tradeup Logo"
+      class="logo mt-[50px]"
+      src="@/assets/logo-tradeup-rodape.png"
+      width="125"
+    />
     <div class="wrapper">
-      <Inicio msg="Teste TradeUp!" />
+      <Inicio msg="Pesquisa de Cep" />
       <nav>
-        <RouterLink to="/">Início</RouterLink>
-        <RouterLink to="/search">Pesquisar Cep´s</RouterLink>
+        <RouterLink class="btn btn-info flex items-center justify-center" to="/">Início</RouterLink>
+        <RouterLink class="btn btn-success flex items-center justify-center py-2" to="/search">Pesquisar Cep´s</RouterLink>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
 nav {
   width: 100%;
@@ -37,13 +31,6 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
 
 nav a {
   display: inline-block;
@@ -60,16 +47,6 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   nav {
